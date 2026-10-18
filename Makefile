@@ -4,7 +4,7 @@
 
 PROJECT_NAME = traffic-accidents-mx-mdc
 PYTHON_VERSION = 3.10
-PYTHON_INTERPRETER = python
+PYTHON_INTERPRETER = python3
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -59,8 +59,8 @@ create_environment:
 
 ## Make dataset
 .PHONY: data
-data: requirements
-	$(PYTHON_INTERPRETER) traffic-accidents/dataset.py
+data:
+	$(PYTHON_INTERPRETER) scripts/download_dataset.py
 
 
 #################################################################################
