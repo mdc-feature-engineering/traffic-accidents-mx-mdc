@@ -1,0 +1,9 @@
+services:
+  dashboard:
+    build: .
+    image: traffic-accidents-dashboard
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

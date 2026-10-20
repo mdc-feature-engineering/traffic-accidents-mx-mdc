@@ -7,21 +7,43 @@
 # Estudio de accidentes de tráfico en México con enfoque en pavimentación de las calles.
 
 ## ¿Para quién es?
-Gobiernos municipales.
+Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU).
 
 ## ¿Qué preguntas puedo responder?
-* ¿Qué tipo de choques hay en calles no pavimentadas?
+El enfoque es la mala condición de las calles: calles no pavimentadas y calles pavimentadas en mal estado.
+* ¿Qué tipo de choques hay en calles en mal estado? (top 5 tipos de accidente)
 * ¿Qué tipo de vehículos tienden a tener más accidentes? ¿En qué tipo de calles suburbanas?
-* ¿La gravedad de los choques es menor en una calle no pavimentada? *(Suposición: los accidentes son menos fatales al ser una calle no pavimentada y los usuarios manejan más lento/con más precaución).*
-* ¿Hay diferencia entre calles no pavimentadas vs. pavimentadas, pero con mala condición de calle?
+* ¿Hay un patrón claro en la hora del día en que ocurren estos choques?
 
 ## ¿Qué gráficas?
+Tipos de choque, vehículos por zona, gravedad/letalidad, mapas de calor hora × día (ver el dashboard).
 
 ## ¿Qué decisiones se tomarán con los resultados?
-Impulsar el tratamiento de las calles a nivel municipal por estado.
+Impulsar el mejoramiento/tratamiento de las calles a nivel FEDERAL.
 
 ## ¿Qué buscamos? ¿Por qué es importante?
-Identificar los factores que influyen en los choques. Es importante para reducir los riesgos tanto para conductores como para peatones.
+Identificar los factores que influyen en los choques. Es importante para reducir los riesgos de la población en general.
+
+
+# Dashboard (Dash/Plotly)
+
+Página web de presentación en `dashboard/`. Requiere el dataset en `data/raw/` (`make data`).
+La primera ejecución convierte el Excel a `data/processed/accidentes_dashboard.parquet` (~1 minuto).
+
+Con Docker:
+
+```bash
+docker compose up --build   # o: make docker-dashboard
+```
+
+Sin Docker:
+
+```bash
+pip install -r requirements-dashboard.txt
+python -m dashboard.app     # o: make dashboard
+```
+
+Abrir http://localhost:8050.
 
 
 # Descarga de datos

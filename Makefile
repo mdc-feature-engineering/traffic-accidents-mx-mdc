@@ -63,6 +63,18 @@ data:
 	$(PYTHON_INTERPRETER) scripts/download_dataset.py
 
 
+## Run the Dash dashboard locally (http://127.0.0.1:8050)
+.PHONY: dashboard
+dashboard:
+	$(PYTHON_INTERPRETER) -m dashboard.app
+
+
+## Run the Dash dashboard in Docker (http://localhost:8050)
+.PHONY: docker-dashboard
+docker-dashboard:
+	docker compose up --build
+
+
 #################################################################################
 # Self Documenting Commands                                                     #
 #################################################################################
